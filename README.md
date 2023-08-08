@@ -102,3 +102,70 @@ No, see the answer above.
 ### Is this compatible with [grblHAL](https://github.com/grblHAL)/[FluidNC](https://github.com/bdring/FluidNC)/[insert your GRBL spinoff here]?
 
 As of now, this library only implements the official GRBL specification. This means that any functionality added by these forks of GRBL is not supported. However, note that the forks tend to be backward-compatible with GRBL, so most of the support is there anyway.
+
+## Docs
+
+### formatCommand(string | object)
+
+These are the possible string values:
+
+```
+get_settings
+get_gcode_parameters
+get_gcode_parser_state
+get_build_info
+get_startup_blocks
+check_gcode_mode
+kill_alarm_lock
+run_homing_cycle
+restore_settings
+erase_wco
+clear_eeprom
+sleep
+status
+cycle_start_resume
+feed_hold
+soft_reset
+safety_door
+jog_cancel
+feed_override_100percent
+feed_override_plus10percent
+feed_override_minus10percent
+feed_override_plus1percent
+feed_override_minus1percent
+rapid_override_100percent
+rapid_override_50percent
+rapid_override_25percent
+toggle_spindle_stop
+toggle_flood_coolant
+toggle_mist_coolant
+```
+
+These are the possible object values:
+
+```js
+{
+    command: "gcode",
+    value: string
+}
+```
+
+```js
+{
+    command: "jog",
+    gcode?: "G20" | "G21" | "G90" | "G91" | "G53"
+    feedrate: number
+    X?: number // At least one of these must be defined
+    Y?: number // At least one of these must be defined
+    Z?: number // At least one of these must be defined
+}
+```
+
+```js
+{
+    command: "save_startup_block"
+    value: string // Any g-code
+}
+```
+
+<!-- ### parseResponse(string) -->

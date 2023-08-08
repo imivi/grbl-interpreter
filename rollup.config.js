@@ -5,8 +5,18 @@ const config = [
     {
         input: 'dist/index.js',
         output: {
-            file: 'dist/index.js',
+            file: 'index.js',
             format: 'cjs',
+            sourcemap: true,
+        },
+        // external: ['os', 'url'],
+        plugins: [typescript()]
+    },
+    {
+        input: 'dist/index.js',
+        output: {
+            file: 'index.mjs',
+            format: 'esm',
             sourcemap: true,
         },
         // external: ['os', 'url'],
@@ -15,7 +25,7 @@ const config = [
     {
         input: 'dist/index.d.ts',
         output: {
-            file: 'dist/index.d.ts',
+            file: 'index.d.ts',
             format: 'es'
         },
         plugins: [dts()]

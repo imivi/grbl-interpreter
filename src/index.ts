@@ -4,5 +4,6 @@ export type { GrblMessage, MachineState, MachineSubState } from "./responses/res
 // Re-export GRBL codes
 export { GrblAlarms, GrblErrors, GrblSettings } from "./responses/grbl-codes"
 
+// Re-export functions
 export { parseResponse } from "./responses/parseResponse"
 export { formatCommand } from "./commands/formatCommand"

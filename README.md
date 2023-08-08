@@ -62,7 +62,7 @@ Additionally, some commands ([realtime commands](https://github.com/gnea/grbl/wi
 Parse a GRBL response message:
 
 ```js
-import { parseResponse } from "grbl-interpreter
+import { parseResponse } from "grbl-interpreter"
 
 console.log(parseResponse("error:5"))
 // Prints: { type: "error", code: 5, description: "Homing cycle is not enabled via settings." }

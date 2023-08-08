@@ -1,6 +1,6 @@
 {
   "name": "grbl-interpreter",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Utility to easily communicate with a device running GRBL firmware",
   "keywords": [
     "grbl",
@@ -11,16 +11,18 @@
   "types": "index.d.ts",
   "type": "module",
   "files": [
-    "dist/index.d.ts",
-    "dist/index.js",
-    "dist/index.js.map"
+    "index.d.ts",
+    "index.js",
+    "index.js.map",
+    "index.mjs",
+    "index.mjs.map"
   ],
   "scripts": {
     "dev": "tsx watch src/test/test_gcode.ts",
-    "build": "rimraf dist && tsc && rollup --config",
-    "_copy": "cp package.json dist/bundle/package.json",
-    "_pack": "npm pack --pack-destination dist",
-    "package": "pnpm _build && pnpm _pack",
+    "clean": "rimraf dist index.d.ts index.js index.js.map",
+    "build": "pnpm clean && tsc && rollup --config",
+    "pack_": "npm pack --pack-destination dist",
+    "package": "pnpm build && pnpm pack_",
     "prepublish": "pnpm build",
     "test": "jest"
   },

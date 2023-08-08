@@ -65,9 +65,13 @@ Parse a GRBL response message:
 import { parseResponse } from "grbl-interpreter"
 
 console.log(parseResponse("error:5"))
-// Prints: { type: "error", code: 5, description: "Homing cycle is not enabled via settings." }
-
-grblMessage = "<Idle|MPos:0.000,0.000,0.000|FS:0,0|WCO:0.000,0.000,0.000>"
+/* Prints:
+{
+    type: "error",
+    code: 5,
+    description: "Homing cycle is not enabled via settings."
+}
+*/
 ```
 
 Format a command to send to GRBL:
@@ -83,14 +87,11 @@ console.log(formatCommand({
     Y: 10,
 }))
 // Prints: "$J=G91 X10 Y10 F400\n"
-
-grblMessage = "<Idle|MPos:0.000,0.000,0.000|FS:0,0|WCO:0.000,0.000,0.000>"
 ```
-
 
 ## FAQ
 
-### Is this library standalone? Can I just use it to communicate with a Microcontroller?
+### Is this library standalone? Can I just use it to communicate with a microcontroller?
 
 No, this library does not actually send anything (you would want to pair it with a NodeJS serial library like [serialport](https://serialport.io/)). It's just a string parser and formatter that handles the conversion from GRBL messages (raw strings) into data that's more useful. **This library is meant for folks who are writing their own G-Code senders.**
 

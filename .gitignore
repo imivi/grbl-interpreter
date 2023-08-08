@@ -28,4 +28,8 @@ _ignore
 INFO*.md
 
 # Ignore build files (created by rollup)
-./index.*
+index.d.ts
+index.js
+index.js.map
+index.mjs
+index.mjs.map

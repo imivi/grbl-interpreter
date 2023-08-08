@@ -1,0 +1,45 @@
+{
+  "name": "grbl-interpreter",
+  "version": "1.0.0",
+  "description": "Utility to easily communicate with a device running GRBL firmware",
+  "keywords": [
+    "grbl",
+    "parser",
+    "cnc"
+  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
+  "files": [
+    "dist/index.d.ts",
+    "dist/index.js",
+    "dist/index.js.map"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/test/test_gcode.ts",
+    "build": "rimraf dist && tsc && rollup --config",
+    "_copy": "cp package.json dist/bundle/package.json",
+    "_pack": "npm pack --pack-destination dist",
+    "package": "pnpm _build && pnpm _pack",
+    "prepublish": "pnpm build",
+    "test": "jest"
+  },
+  "author": "imivi",
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "git+https://github.com/imivi/grbl-interpreter.git"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.5",
+    "jest": "^29.6.2",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.27.1",
+    "rollup-plugin-dts": "^5.3.1",
+    "ts-jest": "^29.1.1",
+    "tslib": "^2.6.1",
+    "tsx": "^3.12.7"
+  }
+}

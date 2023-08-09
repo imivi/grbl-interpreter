@@ -1,6 +1,6 @@
 import { Command, realtimeCommands, simpleCommands } from "./commands"
 
-export function formatCommand(command: Command): string {
+export function formatCommand(command: Command): string | number {
 
     // Format a command without parameters
     if(typeof command === "string") {
@@ -10,7 +10,7 @@ export function formatCommand(command: Command): string {
         }
         else if(realtimeCommands.hasOwnProperty(command)) {
             const message = realtimeCommands[command as keyof typeof realtimeCommands]
-            return message.toString()
+            return message
         }
     }
 

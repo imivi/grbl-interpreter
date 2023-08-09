@@ -107,7 +107,9 @@ As of now, this library only implements the official GRBL specification. This me
 
 ## Docs
 
-### formatCommand(string | object)
+### formatCommand(string | object): string | number
+
+`formatCommand` returns a string or a number. The numbers are used for GRBL's realtime commands: for example, to soft reset GRBL, you have to send `0x18` over serial (hexadecimal 18 = decimal 24).
 
 These are the possible string values:
 
@@ -169,5 +171,3 @@ These are the possible object values:
     value: string // Any g-code
 }
 ```
-
-<!-- ### parseResponse(string) -->

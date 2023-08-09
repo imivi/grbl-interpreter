@@ -5,12 +5,13 @@ const config = [
     {
         input: 'dist/index.js',
         output: [
+            // {
+            //     file: 'index.js',
+            //     format: 'cjs',
+            //     sourcemap: true,
+            // },
             {
                 file: 'index.js',
-                format: 'cjs',
-                sourcemap: true,
-            }, {
-                file: 'index.mjs',
                 format: 'esm',
                 sourcemap: true,
             },

@@ -6,5 +6,7 @@ export { Command, simpleCommands, realtimeCommands } from "./commands/commands"
 export { GrblAlarms, GrblErrors, GrblSettings } from "./responses/grbl-codes"
 
 // Re-export functions
-export { parseResponse } from "./responses/parseResponse"
-export { formatCommand } from "./commands/formatCommand"
+import { parseResponse } from "./responses/parseResponse"
+import { formatCommand } from "./commands/formatCommand"
+
+export default { parseResponse, formatCommand }

@@ -1,5 +1,7 @@
 # GRBL Interpreter
 
+[![NPM badge](https://github.com/imivi/grbl-interpreter/blob/main/docs/badge_npm.svg?raw=true)](https://www.npmjs.com/package/grbl-interpreter)
+
 ![Inkscape-parser banner](https://github.com/imivi/grbl-interpreter/blob/main/docs/grbl-interpreter-banner.png?raw=true)
 
 [GRBL](https://github.com/gnea/grbl) is an open source firmware for CNC machines, designed around the Atmega328p (i.e. Arduino Uno and Nano, mainly).

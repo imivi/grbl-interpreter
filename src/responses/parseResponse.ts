@@ -65,7 +65,7 @@ export function parseResponse(message: string): GrblMessage {
     }
 
     // 6. feedback: 
-    if (message.startsWith("[") && message.startsWith("]")) {
+    if (message.startsWith("[") && message.endsWith("]")) {
         return {
             type: "feedback",
             message,

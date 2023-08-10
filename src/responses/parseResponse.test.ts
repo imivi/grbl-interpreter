@@ -16,3 +16,9 @@ const output: Status = {
 test("Parse status response", () => {
     expect(parseResponse(input)).toMatchObject(output)
 })
+
+test("Parse status response", () => {
+    const input = "[HLP:$$ $# $G $I $N $x=val $Nx=line $J=line $SLP $C $X $H ~ ! ? ctrl-x]"
+    const output = parseResponse(input)
+    expect(output.type).toBe("feedback")
+})
